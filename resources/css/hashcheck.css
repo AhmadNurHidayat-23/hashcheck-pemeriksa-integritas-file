@@ -1,0 +1,53 @@
+.workspace { border: 1px solid var(--line); border-radius: 5px; background: #fbf9fe; overflow: hidden; }
+.file-area { display: flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 158px; padding: 29px; }
+.file-area.is-dragging { background: #e8e2f2; outline: 2px dashed #8f70b2; outline-offset: -7px; }
+.file-copy { display: flex; align-items: center; gap: 21px; min-width: 0; }
+.file-icon { display: grid; place-items: center; width: 53px; height: 62px; border: 1px solid #d8cae5; border-radius: 4px; background: #efebf6; color: #7c5f97; flex-shrink: 0; }
+.file-icon svg { width: 28px; height: 28px; }
+.file-description { min-width: 0; }
+#file-title { overflow-wrap: anywhere; font-size: 14px; font-weight: 550; }
+.file-description p { font-size: 11px; color: var(--muted); line-height: 1.7; margin-top: 5px; overflow-wrap: anywhere; }
+.file-description .file-limit { font-size: 10px; margin-top: 11px; color: #8b5838; }
+.file-area .button { flex-shrink: 0; }
+.file-area.has-file { min-height: 112px; }
+.process-feedback { padding-inline: 29px; }
+.process-status { font-size: 11px; line-height: 1.6; color: var(--ink); }
+.process-status:not(:empty) { padding-bottom: 18px; }
+.error-message { color: #94492e; font-size: 11px; line-height: 1.7; }
+#file-error { padding-bottom: 18px; }
+.result-grid { display: grid; grid-template-columns: 1.05fr 1fr; border-top: 1px solid var(--line); }
+.checksum-panel, .reference-panel { padding: 26px 29px 22px; min-width: 0; }
+.reference-panel { background: #e8e2f2; border-left: 1px solid var(--line); }
+.panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.algorithm { border: 1px solid #e2c3ab; border-radius: 3px; color: #884f2c; background: #f8ece1; padding: 4px 7px; font-size: 9px; letter-spacing: .4px; }
+.field-hint { color: var(--muted); font-size: 10px; line-height: 1.7; margin-top: 7px; }
+textarea { display: block; width: 100%; min-width: 0; padding: 13px; border: 1px solid #cfc3dd; border-radius: 4px; color: var(--ink); background: #fcfbfe; font: 11px/1.9 ui-monospace, SFMono-Regular, Consolas, monospace; resize: none; overflow-wrap: anywhere; }
+textarea::placeholder { color: #756783; opacity: 1; font-size: 10px; }
+textarea#checksum-output, textarea#reference-input { font: 12px/1.9 ui-monospace, SFMono-Regular, Consolas, monospace; }
+#checksum-output { height: 104px; margin-block: 20px 18px; background: #f3f0fa; letter-spacing: .15px; }
+.copy-status { min-height: 18px; margin-top: 9px; color: #62507e; font-size: 10px; line-height: 1.7; }
+.copy-status[data-error='true'] { color: #94492e; }
+#compare-form { margin-top: 19px; }
+#compare-form label { display: block; font-size: 10px; font-weight: 550; margin-bottom: 8px; }
+#reference-input { height: 80px; margin-bottom: 15px; }
+#reference-input[aria-invalid='true'] { border-color: #a45935; }
+#reference-error { margin-block: -4px 12px; }
+.comparison-result { border: 1px solid #bfb0d3; border-radius: 4px; background: #f4f0fa; padding: 13px 15px; margin-top: 17px; }
+.comparison-result[data-match='false'] { background: #f8e9dc; border-color: #d5ac8f; color: #804827; }
+.comparison-title { font-size: 12px; font-weight: 650; margin-bottom: 5px; }
+.comparison-result p + p { font-size: 10px; line-height: 1.7; }
+.explanation { display: grid; grid-template-columns: 230px 1fr; gap: 28px; padding-top: 28px; margin-top: 5px; }
+.explanation h2 { font-size: 12px; }
+.explanation p { font-size: 11px; line-height: 1.85; color: var(--muted); }
+.explanation p + p { margin-top: 7px; }
+@media (max-width: 700px) {
+    .file-area { flex-direction: column; align-items: stretch; min-height: 0; padding: 23px 21px; gap: 20px; }
+    .file-copy { gap: 14px; }
+    .file-icon { width: 43px; height: 53px; }
+    .process-feedback { padding-inline: 21px; }
+    .result-grid { grid-template-columns: 1fr; }
+    .checksum-panel, .reference-panel { padding: 24px 21px 20px; }
+    .reference-panel { border-left: 0; border-top: 1px solid var(--line); }
+    #checksum-output { height: 116px; font-size: 11px; margin-top: 17px; }
+    .explanation { grid-template-columns: 1fr; gap: 11px; padding-top: 23px; }
+}
